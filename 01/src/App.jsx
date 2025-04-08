@@ -3,10 +3,14 @@ import { Person } from './component/Person'
 import { useState } from 'react'
 
 export function App() {
-  const [ firstName, setFirstName ] = useState('');
-  const [ lastName, setLastName ] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [submittedFirstName, setSubmittedFirstName] = useState('');
+  const [submittedLastName, setSubmittedLastName] = useState('');
 
   const handleSend = () => {
+    setSubmittedFirstName(firstName);
+    setSubmittedLastName(lastName);
   }
 
   return (
@@ -23,8 +27,8 @@ export function App() {
         </section>
         <section id="right">
           <Person
-            firstName={firstName}
-            lastName={lastName}
+            firstName={submittedFirstName}
+            lastName={submittedLastName}
             />
         </section>
       </div>
