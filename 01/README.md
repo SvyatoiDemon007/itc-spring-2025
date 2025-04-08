@@ -15,6 +15,7 @@
  * javascript
  * useState, можно добавлять новые состояния, например
  * имеет смысл дописать функцию handleSend в App.jsx
+ * **НЕЛЬЗЯ** менять файл src/component/Person.jsx
 
 ## Как сдавать
 
