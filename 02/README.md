@@ -1,12 +1,21 @@
-# React + Vite
+## Что нужно сделать
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ * Список заданий перечислен на страничке (компонент Memo)
+ * Для получения 3 необходимо выполнить задание с пометкой [3]
+ * Для получения 4 необходимо выполнить задание с пометкой [4] и все до него
+ * Для получения 5 необходимо выполнить все задания
 
-Currently, two official plugins are available:
+## Где посмотреть, как должно работать
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ https://nhee.ru/itc/02/
 
-## Expanding the ESLint configuration
+## Подсказки
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ * Исправляем handleRowClick в компоненте Table
+ * Исправляем useEffect и handleSave в компоненте Form
+
+## Процесс сдачи тот же, что и в прошлый раз
+
+ * Кидаете результат работы в репозитарий
+ * Скидываете мне в телегу ссылку на репозитарий и на каталог, в котором лежит задача
+ * Проверять буду завтра, всем, кто не сдал буду ставить 0 баллов
