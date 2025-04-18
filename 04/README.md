@@ -1,12 +1,18 @@
-# React + Vite
+## Что нужно сделать
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ * На скорую руку сверстанная шахматная доска, на ней, по хорошему, должна находиться шахматная фигура коня
+ * Нужно обнаружить, где он лежит и попытаться его использовать
+ * Клик по клетке доски должен приводить к тому, чтобы конь перемещался в эту клетку
+ * Задание на 3 - сделать чтобы конь перемещался в указанную клетку
+ * Задание на 4 - сделать, чтобы конь перемещался как конь (две клетки в одну сторону и одна клетка под углом)
+ * Задание на 5 - сделать, чтобы клетка, в которую можно переместить коня подсвечивалась при наведении (у меня не реализовано)
 
-Currently, two official plugins are available:
+## Где посмотреть, как должно работать
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ https://nhee.ru/itc/04/
 
-## Expanding the ESLint configuration
+## Процесс сдачи не поменялся
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ * Кидаете результат работы в репозитарий
+ * Скидываете мне в телегу ссылку на репозитарий и на каталог, в котором лежит задача
+ * Проверять буду завтра, всем, кто не сдал буду ставить 0 баллов
