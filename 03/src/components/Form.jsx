@@ -27,9 +27,14 @@ export const Form = () => {
     }
   }
 
-  const handleSave = () => {
-    // TODO
-  };
+const handleSave = () => {
+  dispatch(setRow({
+    id,
+    name: nameRef.current.value,
+    city: cityRef.current.value
+  }));
+  navigate('/');
+};
 
   return (
     id && (
