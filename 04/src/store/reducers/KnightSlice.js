@@ -11,6 +11,8 @@ export const knightSlice = createSlice({
 
   reducers: {
     setPosition: (state, action) => {
+      state.row = action.payload.row;
+      state.column = action.payload.column;
     },
   },
   selectors: {
@@ -18,3 +20,6 @@ export const knightSlice = createSlice({
     getColumn: (state) => state.column,
   },
 });
+
+export const { setPosition } = knightSlice.actions;
+export default knightSlice.reducer;
