@@ -20,4 +20,16 @@ export const Cell = ({ column, row }) => {
       {knightRow === row && knightColumn === column && <Knight />}
     </div>
   );
+  const isValidMove = (newRow, newCol) => {
+  const rowDiff = Math.abs(newRow - knightRow);
+  const colDiff = Math.abs(newCol - knightColumn);
+  return (rowDiff === 2 && colDiff === 1) || (rowDiff === 1 && colDiff === 2);
+}
+
+const handleClick = () => {
+  if (isValidMove(row, column)) {
+    dispatch(setPosition({ row, column }));
+  }
+}
+
 }
