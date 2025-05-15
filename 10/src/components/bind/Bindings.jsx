@@ -12,8 +12,6 @@ export const Bindings = () => {
 
   useEffect(() => {
     const bindHandler = (e) => {
-      dispatch(setBind(e.code));
-      dispatch(setPause(false));
     }
 
     document.addEventListener('keydown', bindHandler);

@@ -15,8 +15,6 @@ export const Bind = ({ direction }) => {
   const waiting = direction === cdirection;
 
   const handleClick = () => {
-    dispatch(selectDirection(direction));
-    dispatch(setPause(true));
   }
 
   return (

@@ -15,14 +15,8 @@ export const bindSlice = createSlice({
   initialState,
   reducers: {
     setBind: (state, action) => {
-      const code = action.payload;
-      if (state.direction) {
-        state.bindings[state.direction] = code;
-        state.direction = null;
-      }
     },
     selectDirection: (state, action) => {
-      state.direction = action.payload;
     }
   },
   selectors: {

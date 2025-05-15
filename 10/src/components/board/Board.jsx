@@ -15,25 +15,7 @@ export const Board = () => {
   const binds = useSelector(getBinds);
   const { up, down, left, right } = binds;
 
-  useEffect(() => {
-    const arrowHandler = (e) => {
-      if (e.code === left) {
-        dispatch(moveDir({direction: 'LEFT'}));
-      } else if (e.code === right) {
-        dispatch(moveDir({direction: 'RIGHT'}));
-      } else if (e.code === up) {
-        dispatch(moveDir({direction: 'UP'}));
-      } else if (e.code === down) {
-        dispatch(moveDir({direction: 'DOWN'}));
-      }
-    }
-
-    document.addEventListener('keydown', arrowHandler);
-
-    return () => {
-      document.removeEventListener('keydown', arrowHandler);
-    }
-  }, [binds]);
+  // TODO: useEffect
 
   return (
     <div className={classes.board}>
