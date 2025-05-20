@@ -10,11 +10,20 @@ export const Population = () => {
   const ref = useRef();
 
   useEffect(() => {
-    // TODO
+    const load = async () => {
+      const resp = await fetch(populationUrl);
+      const data = await resp.json();
+      setData(data.data);
+    }
+
+    load();
   }, []);
 
   const handleChangeCountry = () => {
-    // TODO
+    const code = ref.current.value;
+    const country = data.find((e) => e.code === code);
+
+    setPopulation(country.populationCounter);
   }
 
   return (
