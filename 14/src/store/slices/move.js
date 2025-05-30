@@ -9,10 +9,13 @@ export const moveSlice = createSlice({
   initialState,
   reducers: {
     setSource: (state, action) => {
+      state.source = action.payload;
     },
     dropSource: (state) => {
+      state.source = null;
     },
   },
   selectors: {
+    getSource: (state) => state.source,
   },
 });
