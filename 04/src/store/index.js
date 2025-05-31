@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { knightSlice } from './reducers/KnightSlice';
 
 const reducer = combineReducers({
-  [knightSlice.reducer]: knightSlice,
+  knight: knightSlice.reducer,
 });
 
 export const setupStore = () => configureStore({
