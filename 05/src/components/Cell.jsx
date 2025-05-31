@@ -12,33 +12,32 @@ export const Cell = ({ column, row }) => {
   const rookPos = useSelector((state) => state.figures.rookPosition);
   const currentFigure = useSelector((state) => state.figures.currentFigure);
 
+  const validMoves = useSelector((state) =>
+    figuresSlice.selectors.getValidMoves(state.figures)
+  );
+
   const isKnight = knightPos.row === row && knightPos.column === column;
   const isRook = rookPos.row === row && rookPos.column === column;
+  const isCurrent =
+    (isKnight && currentFigure === 'knight') || (isRook && currentFigure === 'rook');
 
-  const isValidKnightMove = () => {
-    const dx = Math.abs(knightPos.column - column);
-    const dy = Math.abs(knightPos.row - row);
-    return (dx === 2 && dy === 1) || (dx === 1 && dy === 2);
-  };
-
-  const isValidRookMove = () => {
-    return rookPos.column === column || rookPos.row === row;
-  };
+  const canMoveHere = validMoves.some(
+    (pos) => pos.row === row && pos.column === column
+  );
 
   const handleClick = () => {
-    if (currentFigure === 'knight' && isValidKnightMove()) {
-      dispatch(figuresSlice.actions.setToPosition({ figure: 'knight', column, row }));
-    }
-    if (currentFigure === 'rook' && isValidRookMove()) {
-      dispatch(figuresSlice.actions.setToPosition({ figure: 'rook', column, row }));
+    if (canMoveHere) {
+      dispatch(figuresSlice.actions.setToPosition({ figure: currentFigure, row, column }));
     }
   };
 
   const color = (column % 2 === row % 2) ? 'white' : 'black';
-  const isCurrent = (isKnight && currentFigure === 'knight') || (isRook && currentFigure === 'rook');
 
   return (
-    <div className={clsx(classes.cell, classes[color], isCurrent && classes.current)} onClick={handleClick}>
+    <div
+      className={clsx(classes.cell, classes[color], isCurrent && classes.current)}
+      onClick={handleClick}
+    >
       {isKnight && <Knight />}
       {isRook && <Rook />}
     </div>
