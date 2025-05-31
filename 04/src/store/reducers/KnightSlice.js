@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   row: 0,
@@ -8,18 +8,13 @@ const initialState = {
 export const knightSlice = createSlice({
   name: 'knight',
   initialState,
-
   reducers: {
     setPosition: (state, action) => {
-      state.row = action.payload.row;
-      state.column = action.payload.column;
-    },
-  },
-  selectors: {
-    getRow: (state) => state.row,
-    getColumn: (state) => state.column,
-  },
+      const { row, column } = action.payload;
+      state.row = row;
+      state.column = column;
+    }
+  }
 });
 
 export const { setPosition } = knightSlice.actions;
-export default knightSlice.reducer;
