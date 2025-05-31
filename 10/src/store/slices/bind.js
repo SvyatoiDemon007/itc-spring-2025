@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   direction: null,
@@ -8,15 +8,19 @@ const initialState = {
     up: 'ArrowUp',
     down: 'ArrowDown'
   }
-}
+};
 
 export const bindSlice = createSlice({
   name: "bind",
   initialState,
   reducers: {
     setBind: (state, action) => {
+      const { direction, key } = action.payload;
+      state.bindings[direction] = key;
+      state.direction = null;
     },
     selectDirection: (state, action) => {
+      state.direction = action.payload;
     }
   },
   selectors: {
