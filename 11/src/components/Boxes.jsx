@@ -17,6 +17,19 @@ export const Boxes = () => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
+      if (!movesAvailable[order]) return;
+
+      let direction = null;
+
+      if (e.key === 'ArrowUp') direction = 'up';
+      if (e.key === 'ArrowDown') direction = 'down';
+      if (e.key === 'ArrowLeft') direction = 'left';
+      if (e.key === 'ArrowRight') direction = 'right';
+
+      if (direction) {
+        dispatch(moveBox({ color: order, direction }));
+        dispatch(next());
+      }
     }
 
     document.addEventListener('keydown', handleKeyDown);
