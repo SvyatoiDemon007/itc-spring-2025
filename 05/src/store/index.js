@@ -1,8 +1,8 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import { figuresSlice } from './reducers/figures.js'
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { figuresSlice } from './reducers/figures';
 
 const reducer = combineReducers({
-  [figuresSlice.reducerPath]: figuresSlice.reducer,
+  figures: figuresSlice.reducer,
 });
 
 export const setupStore = () => configureStore({
