@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useDispatch, useSelector } from 'react-redux';
 import { moveSlice } from '../store/slices/move';
 import { itemsSlice } from '../store/slices/items';
 import { Item } from './Item';
 import classes from './Pole.module.css';
+import clsx from 'clsx';
 
 export const Pole = ({ id }) => {
   const { setSource, dropSource } = moveSlice.actions;
@@ -27,13 +27,16 @@ export const Pole = ({ id }) => {
   };
 
   const renderItems = () => {
-    return items.map((itemId, index) => (
+    return [...items].reverse().map((itemId, index) => (
       <Item key={index} number={itemId} />
     ));
   };
 
   return (
-    <div className={classes.pole} onClick={handleClick}>
+    <div
+      className={clsx(classes.pole, source === id && classes.active)}
+      onClick={handleClick}
+    >
       {renderItems()}
     </div>
   );
